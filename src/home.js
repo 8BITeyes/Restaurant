@@ -1,7 +1,8 @@
 import Rest from "./Rest.jpg";
 
-export default function component() {
+export default function homeLoad() {
   const element = document.createElement("div");
+  element.classList.add("home");
 
   const title = document.createElement("h1");
   title.innerHTML = "Rocco's Restaurant";
@@ -9,6 +10,7 @@ export default function component() {
 
   const image = new Image();
   image.src = Rest;
+  image.classList.add("image");
 
   const review = document.createElement("div");
   review.innerHTML = `"Wow. What a Restaurant." ~ Rocco Botte`;

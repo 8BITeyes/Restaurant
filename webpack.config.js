@@ -1,12 +1,16 @@
 const path = require("path");
 
 module.exports = {
+  mode: "development",
   entry: "./src/index.js",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
-  mode: "development",
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/,
+  },
   module: {
     rules: [
       {
