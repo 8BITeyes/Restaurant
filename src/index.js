@@ -1,27 +1,35 @@
 import homeLoad from "./home";
 import "./style.css";
+import menuLoad from "./menu";
 
 const menuBody = document.querySelector("div#content");
-const homeStart = document.querySelector("div.home");
+const homeStart = document.querySelector("div.home"); //Initial page on load = same as homeLoad();
 
-//HOME BUTTON LOAD /HOME MODULE
-const homeButton = document.querySelector("#home");
+homeLoad();
+menuLoad();
 
-let homeDisable = false;
+//Web divs/sections
+let homeSection = document.querySelector(".home");
+let menuSection = document.querySelector(".menu");
 
+//Nav buttons
+let homeButton = document.querySelector("#home-button");
 homeButton.addEventListener("click", function () {
-  if (homeDisable === false) {
-    homeStart.remove();
-    homeLoad();
-    disable();
-    homeDisable = true;
-  } else if (homeDisable === true) {
-    return;
-  }
+  homeSection.style.display = "flex";
+  menuSection.style.display = "none";
+
+  homeButton.style.backgroundColor = "grey";
+  menuButton.style.backgroundColor = mainColor;
 });
 
-function disable() {
-  homeButton.style.backgroundColor = "grey";
-}
+let menuButton = document.querySelector("#menu-button");
+menuButton.addEventListener("click", function () {
+  homeSection.style.display = "none";
+  menuSection.style.display = "grid";
 
-//MENU BUTTON LOAD /MENU MODULE;
+  homeButton.style.backgroundColor = mainColor;
+  menuButton.style.backgroundColor = "grey";
+});
+
+//css variables
+let mainColor = getComputedStyle(homeButton).getPropertyValue("--second-color");
