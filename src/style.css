@@ -43,14 +43,16 @@ a:hover {
     background-color: grey;
 }
 
-h1 {
-    color: red;
+.title {
+    color: var(--second-color);
 }
 
 .home {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 50px;
+    margin: 20px;
 }
 
 .image {
@@ -86,7 +88,7 @@ h1 {
 
 .dew {
     width: 720px;
-    height: 480px;
+    height: auto;
 }
 
 .corn {
@@ -100,4 +102,28 @@ h1 {
     grid-template-rows: 1fr 1fr;
     align-items: center;
     justify-items: center;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+}
+
+.about-Rocco {
+    width: 325px;
+    margin: 30px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.Rocco-image {
+    width: 1080px;
+    height: auto;
+}
+
+img {
+    border-radius: 5px;
 }
